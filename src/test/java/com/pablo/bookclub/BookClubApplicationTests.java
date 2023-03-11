@@ -1,10 +1,10 @@
-package com.pablo.workingtemplate;
+package com.pablo.bookclub;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WorkingTemplateApplicationTests {
+class BookClubApplicationTests {
 
     @Test
     void contextLoads() {
