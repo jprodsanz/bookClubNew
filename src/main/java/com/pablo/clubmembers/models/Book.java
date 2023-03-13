@@ -1,4 +1,4 @@
-package com.pablo.bookclub.models;
+package com.pablo.clubmembers.models;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -12,7 +12,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     @NotEmpty (message="Title is required")
     @Size(min=3, message="Title should be at least three characters long ")
@@ -34,14 +34,17 @@ public class Book {
     private Date updatedAt;
 
     // constructor assigns values to objects
+    @ManyToOne( fetch = FetchType.LAZY)
+    @JoinColumn(name="member_id")
+    private Member member;
     public Book() {}
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        id = id;
     }
 
     public String getTitle() {
@@ -50,6 +53,14 @@ public class Book {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
     }
 
     public String getAuthor() {

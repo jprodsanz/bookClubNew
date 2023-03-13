@@ -19,6 +19,9 @@
     <p>
         <a href="/book/new" class="btn btn-outline-primary">Add Book </a>
     </p>
+    <p>
+        <a href="/member/new" class="btn btn-outline-primary">Add User</a>
+    </p>
     <table class="table table-striped table-bordered text-center">
         <thead class="table-dark">
         <tr>
@@ -38,7 +41,7 @@
                 <td><c:out value="${book.myThoughts}"/></td>
                 <td>
                     <a href="/book/${book.id}/delete" class="btn btn-danger">Delete</a>
-                    <a href="/book/${book.id}" class="btn btn-primary">Update</a>
+                    <a href="/book/${book.id}" class="btn btn-primary">Edit</a>
                 </td>
             </tr>
 

@@ -1,10 +1,9 @@
-package com.pablo.bookclub.repositories;
+package com.pablo.clubmembers.repositories;
 
-import com.pablo.bookclub.models.Book;
+import com.pablo.clubmembers.models.Book;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface BookRepository extends CrudRepository<Book, Long> {
 

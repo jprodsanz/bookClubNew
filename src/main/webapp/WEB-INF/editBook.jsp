@@ -17,8 +17,10 @@
 <div class="container">
     <h1 class="display-1 text-center" >Edit Book  </h1>
     <form:form action="/book/${book.id}" method="POST" modelAttribute="book">
-<%--    line below is crucial --%>
+        <%--    line below is crucial --%>
     <input type="hidden" name="_method" value="PUT"/>
+        <form:input type="hidden" path="id" value="${book.id}"/>
+
 
     <div class="mb-3">
         <form:label for="title" class="form-label" path="title">Title:</form:label>

@@ -1,8 +1,8 @@
-package com.pablo.bookclub.services;
+package com.pablo.clubmembers.services;
 
 
-import com.pablo.bookclub.models.Book;
-import com.pablo.bookclub.repositories.BookRepository;
+import com.pablo.clubmembers.models.Book;
+import com.pablo.clubmembers.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
