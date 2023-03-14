@@ -19,9 +19,11 @@
     <form:form action="/book/${book.id}" method="POST" modelAttribute="book">
         <%--    line below is crucial --%>
     <input type="hidden" name="_method" value="PUT"/>
-        <form:input type="hidden" path="id" value="${book.id}"/>
-
-
+<%--    if you don't have this member id will be removed from book entry --%>
+    <div class="mb-3">
+        <form:errors path="member" class="error"/>
+        <form:input type="hidden" path="member" value="${member.id}" class="form"/>
+    </div>
     <div class="mb-3">
         <form:label for="title" class="form-label" path="title">Title:</form:label>
         <form:input style="width:250px;" type="text" class="form-control" id="title" aria-describedby="title" path="title"/>

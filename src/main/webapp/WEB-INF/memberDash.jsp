@@ -41,6 +41,7 @@
       <td>
         <a href="/member/${member.id}/delete" class="btn btn-danger">Delete</a>
         <a href="/member/${member.id}" class="btn btn-primary">View</a>
+        <a href="/member/${member.id}/edit" class="btn btn-primary">Edit</a>
       </td>
     </c:forEach>
     </tbody>

@@ -1,5 +1,4 @@
 package com.pablo.clubmembers.controllers;
-
 import com.pablo.clubmembers.models.Book;
 import com.pablo.clubmembers.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Id;
+
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -54,11 +54,12 @@ public class BookController {
     @PutMapping("/book/{id}")
     // this has to come in this order valid, modelAtt etc...
     public String updateBook(
-            @Valid @ModelAttribute ("book") Book book, BindingResult result, @PathVariable("id") Long id)  {
+            @Valid @ModelAttribute("book") Book book, BindingResult result, @PathVariable("id") Long id)  {
         if (result.hasErrors()) {
             return "editBook.jsp";
         }
         book.setId(id);
+        System.out.println(id);
         bookServ.update(book);
         return "redirect:/";
     }

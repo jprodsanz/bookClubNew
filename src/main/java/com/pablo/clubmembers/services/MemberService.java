@@ -1,5 +1,6 @@
 package com.pablo.clubmembers.services;
 
+import com.pablo.clubmembers.models.Book;
 import com.pablo.clubmembers.models.Member;
 import com.pablo.clubmembers.repositories.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,9 @@ public class MemberService {
             return null;
         }
         return optMember.get();
+    }
+    public Member update(Member m){
+        return memberRepo.save(m);
     }
     public void delete(Long id) {
         memberRepo.deleteById(id);

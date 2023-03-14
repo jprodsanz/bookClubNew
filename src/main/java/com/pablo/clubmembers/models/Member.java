@@ -31,7 +31,9 @@ public class Member {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
 
-    @OneToMany(mappedBy="member", fetch=FetchType.LAZY)
+    // cascade is a chain reaction, if we delete a user
+    // it will find every entry associated with the user and delete it
+    @OneToMany(mappedBy="member", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Book> booksAdded;
 
     public Member() {}
@@ -92,4 +94,5 @@ public class Member {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
+
 }

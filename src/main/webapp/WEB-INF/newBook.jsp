@@ -18,6 +18,10 @@
 <div class="container">
     <form:form action="/book/new" method="POST" modelAttribute="newBook">
         <div class="mb-3">
+            <form:errors path="member" class="error"/>
+            <form:input type="hidden" path="member" value="${member.id}" class="form"/>
+        </div>
+        <div class="mb-3">
             <form:label for="title" class="form-label" path="title">Title:</form:label>
             <form:input style="width:250px;" type="text" class="form-control" id="title" aria-describedby="title" path="title"/>
             <form:errors path="title" class="text-danger"/>
